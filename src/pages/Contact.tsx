@@ -142,27 +142,27 @@ const Contact = () => {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <Mail className="text-terminal-purple" size={20} />
-                      <a href="mailto:hello@saketh.dev" className="text-white hover:text-terminal-purple transition-colors">
-                        hello@saketh.dev
+                      <a href="mailto:sakethdussa1234@gmail.com" className="text-white hover:text-terminal-purple transition-colors">
+                        sakethdussa1234@gmail.com
                       </a>
                     </div>
                     
                     <div className="flex items-center space-x-3">
                       <Phone className="text-terminal-purple" size={20} />
-                      <span className="text-white">+1 (555) 123-4567</span>
+                      <span className="text-white">+91 9398085750</span>
                     </div>
                     
                     <div className="flex items-center space-x-3">
                       <Github className="text-terminal-purple" size={20} />
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-purple transition-colors">
-                        github.com/saketh-dev
+                      <a href="https://github.com/Usersaketh" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-purple transition-colors">
+                      Usersaketh
                       </a>
                     </div>
                     
                     <div className="flex items-center space-x-3">
                       <Linkedin className="text-terminal-purple" size={20} />
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-purple transition-colors">
-                        linkedin.com/in/saketh
+                      <a href="https://www.linkedin.com/in/saketh190705/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-purple transition-colors">
+                        Dussa Pranay Saketh
                       </a>
                     </div>
                   </div>
@@ -178,11 +178,7 @@ const Contact = () => {
                     I'm currently <span className="text-terminal-green">available</span> for freelance work and open to discussing full-time opportunities.
                   </p>
                   
-                  <div className="p-4 bg-terminal-gray rounded-md border border-white/10">
-                    <p className="text-sm text-white/70">
-                      <span className="text-terminal-purple font-bold">Note:</span> I typically respond to all messages within 24-48 hours. For urgent inquiries, please mention "Urgent" in your message.
-                    </p>
-                  </div>
+                      
                 </div>
               </div>
             </FadeInSection>

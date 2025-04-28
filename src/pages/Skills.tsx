@@ -1,36 +1,55 @@
-
 import React from 'react';
 import FadeInSection from '../components/FadeInSection';
 import SkillBar from '../components/SkillBar';
 import TerminalHeader from '../components/TerminalHeader';
 import CodeBlock from '../components/CodeBlock';
 
-// Sample skill data
-const frontendSkills = [
-  { name: 'React', level: 92 },
-  { name: 'JavaScript', level: 95 },
-  { name: 'TypeScript', level: 88 },
-  { name: 'HTML/CSS', level: 90 },
-  { name: 'Tailwind CSS', level: 85 },
-  { name: 'Next.js', level: 80 }
+// Sample skill data based on your provided list
+const languages = [
+  { name: 'C', level: 85 },
+  { name: 'C++', level: 80 },
+  { name: 'Java', level: 85 },
+  { name: 'Python', level: 90 },
+  { name: 'HTML', level: 95 },
+  { name: 'CSS', level: 85 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'SQL', level: 80 }
 ];
 
-const backendSkills = [
-  { name: 'Node.js', level: 85 },
-  { name: 'Express', level: 82 },
-  { name: 'Django', level: 75 },
-  { name: 'PostgreSQL', level: 78 },
-  { name: 'MongoDB', level: 80 },
-  { name: 'GraphQL', level: 72 }
-];
-
-const devOpsTools = [
+const frameworks = [
+  { name: 'MERN Stack (MongoDB, Express, React, Node.js)', level: 90 },
+  { name: 'Next.js', level: 85 },
+  { name: 'Tailwind CSS', level: 80 },
+  { name: 'TensorFlow & Keras', level: 70 },
+  { name: 'OpenCV & MediaPipe', level: 80 },
+  { name: 'Spring Boot', level: 75 },
   { name: 'Git', level: 90 },
-  { name: 'Docker', level: 75 },
-  { name: 'AWS', level: 70 },
-  { name: 'CI/CD', level: 78 },
-  { name: 'Linux', level: 85 },
-  { name: 'Nginx', level: 72 }
+  { name: 'Figma', level: 85 },
+  { name: 'REST APIs', level: 80 }
+];
+
+const technicalAreas = [
+  { name: 'Data Structures', level: 90 },
+  { name: 'Object-Oriented Programming (OOP)', level: 85 },
+  { name: 'Deep Learning (DL)', level: 80 },
+  { name: 'Computer Vision (CVIP)', level: 80 },
+  { name: 'Prompt Engineering', level: 95 },
+  { name: 'Generative AI (Gen AI)', level: 90 }
+];
+
+const areasOfInterest = [
+  'AI Research',
+  'Hacking',
+  'Deep Learning',
+  'Computer Vision (CVIP)'
+];
+
+const softSkills = [
+  'Leadership',
+  'Communication',
+  'Teamwork',
+  'Problem-Solving',
+  'Time Management'
 ];
 
 const Skills = () => {
@@ -42,7 +61,7 @@ const Skills = () => {
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               <span className="text-terminal-green">$</span> Skills & Expertise
             </h1>
-            <p className="text-white/60 max-w-2xl">
+            <p className="text-white/60 ">
               A comprehensive overview of my technical skills and proficiency levels. 
               I'm constantly learning and expanding this list to stay current with industry trends.
             </p>
@@ -58,25 +77,25 @@ const Skills = () => {
               &nbsp;&nbsp;yearsOfExperience: <span className="string">5</span>,<br />
               &nbsp;&nbsp;skills: {"{"}
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;frontend: [<span className="string">"React"</span>, <span className="string">"TypeScript"</span>, <span className="string">"Next.js"</span>, <span className="string">"Tailwind"</span>],<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;backend: [<span className="string">"Node.js"</span>, <span className="string">"Express"</span>, <span className="string">"PostgreSQL"</span>, <span className="string">"GraphQL"</span>],<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;devOps: [<span className="string">"Git"</span>, <span className="string">"Docker"</span>, <span className="string">"AWS"</span>, <span className="string">"CI/CD"</span>]<br />
-              &nbsp;&nbsp;{"}"},<br />
-              &nbsp;&nbsp;learning: [<span className="string">"AI/ML"</span>, <span className="string">"Rust"</span>, <span className="string">"WebAssembly"</span>]<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;languages: [<span className="string">"C"</span>, <span className="string">"C++"</span>, <span className="string">"Java"</span>, <span className="string">"Python"</span>, <span className="string">"HTML"</span>, <span className="string">"CSS"</span>, <span className="string">"JavaScript"</span>, <span className="string">"SQL"</span>],<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;frameworks: [<span className="string">"MERN Stack"</span>, <span className="string">"Next.js"</span>, <span className="string">"Tailwind CSS"</span>, <span className="string">"TensorFlow & Keras"</span>, <span className="string">"OpenCV & MediaPipe"</span>, <span className="string">"Spring Boot"</span>, <span className="string">"Firebase"</span>, <span className="string">"Git"</span>, <span className="string">"Figma"</span>],<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;technicalAreas: [<span className="string">"Data Structures"</span>, <span className="string">"OOP"</span>, <span className="string">"Deep Learning"</span>, <span className="string">"Computer Vision"</span>, <span className="string">"Prompt Engineering"</span>, <span className="string">"Generative AI"</span>]<br />
+              &nbsp;&nbsp;{"}"}<br />
+              &nbsp;&nbsp;learning: [<span className="string">"AI Research"</span>, <span className="string">"Hacking"</span>, <span className="string">"Deep Learning"</span>, <span className="string">"Computer Vision"</span>]<br />
               {"}"};
             </CodeBlock>
           </FadeInSection>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Frontend Skills */}
+          {/* Languages */} 
           <div>
             <FadeInSection>
               <div className="terminal-window h-full">
-                <TerminalHeader path="~/portfolio/skills/frontend" />
+                <TerminalHeader path="~/portfolio/skills/languages" />
                 <div className="terminal-body">
-                  <h3 className="text-lg font-bold mb-6 text-terminal-blue">Frontend Development</h3>
-                  {frontendSkills.map((skill, index) => (
+                  <h3 className="text-lg font-bold mb-6 text-terminal-blue">Languages</h3>
+                  {languages.map((skill, index) => (
                     <SkillBar
                       key={index}
                       name={skill.name}
@@ -89,15 +108,15 @@ const Skills = () => {
               </div>
             </FadeInSection>
           </div>
-          
-          {/* Backend Skills */}
+
+          {/* Frameworks */} 
           <div>
             <FadeInSection delay={100}>
               <div className="terminal-window h-full">
-                <TerminalHeader path="~/portfolio/skills/backend" />
+                <TerminalHeader path="~/portfolio/skills/frameworks" />
                 <div className="terminal-body">
-                  <h3 className="text-lg font-bold mb-6 text-terminal-green">Backend Development</h3>
-                  {backendSkills.map((skill, index) => (
+                  <h3 className="text-lg font-bold mb-6 text-terminal-green">Frameworks</h3>
+                  {frameworks.map((skill, index) => (
                     <SkillBar
                       key={index}
                       name={skill.name}
@@ -110,15 +129,15 @@ const Skills = () => {
               </div>
             </FadeInSection>
           </div>
-          
-          {/* DevOps Skills */}
+
+          {/* Technical Areas */} 
           <div>
             <FadeInSection delay={200}>
               <div className="terminal-window h-full">
-                <TerminalHeader path="~/portfolio/skills/devops" />
+                <TerminalHeader path="~/portfolio/skills/technical-areas" />
                 <div className="terminal-body">
-                  <h3 className="text-lg font-bold mb-6 text-terminal-purple">DevOps & Tools</h3>
-                  {devOpsTools.map((skill, index) => (
+                  <h3 className="text-lg font-bold mb-6 text-terminal-purple">Technical Areas</h3>
+                  {technicalAreas.map((skill, index) => (
                     <SkillBar
                       key={index}
                       name={skill.name}
@@ -132,7 +151,7 @@ const Skills = () => {
             </FadeInSection>
           </div>
         </div>
-        
+
         <FadeInSection delay={300}>
           <div className="mt-16">
             <h3 className="text-xl font-bold mb-4 text-white">Other Skills & Interests</h3>
@@ -141,27 +160,26 @@ const Skills = () => {
               <div className="terminal-body">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">
-                    <h4 className="font-bold mb-2 text-terminal-blue">Cloud Services</h4>
+                    <h4 className="font-bold mb-2 text-terminal-blue">AI Research & Hacking</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>AWS (S3, EC2, Lambda)</li>
-                      <li>Google Cloud Platform</li>
-                      <li>Firebase</li>
+                      <li>AI Research</li>
+                      <li>Hacking</li>
+                      <li>Generative AI</li>
                     </ul>
                   </div>
                   <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">
-                    <h4 className="font-bold mb-2 text-terminal-green">UI/UX</h4>
+                    <h4 className="font-bold mb-2 text-terminal-green">Deep Learning & Computer Vision</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>Figma</li>
-                      <li>Responsive Design</li>
-                      <li>Accessibility (a11y)</li>
+                      <li>Deep Learning (DL)</li>
+                      <li>Computer Vision (CVIP)</li>
                     </ul>
                   </div>
                   <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">
-                    <h4 className="font-bold mb-2 text-terminal-purple">Currently Learning</h4>
+                    <h4 className="font-bold mb-2 text-terminal-purple">Soft Skills</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>Machine Learning</li>
-                      <li>Web3 / Blockchain</li>
-                      <li>Rust Programming</li>
+                      {softSkills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>

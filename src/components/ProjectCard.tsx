@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
           <div className="text-sm text-white opacity-80 flex-1 text-center truncate">
-            {title}.exe
+            &nbsp;{title}.exe
           </div>
           <div className="w-16"></div>
         </div>
@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           </div>
           
-          <div className="flex space-x-4">
+          <div className="flex space-x-8">
             {githubLink && (
               <a 
                 href={githubLink}

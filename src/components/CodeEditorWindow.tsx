@@ -41,11 +41,11 @@ const CodeEditorWindow = () => {
             </div>
             <div className="pl-4">
               <span className="text-white/70">role:</span>{" "}
-              <span className="text-terminal-green">"Software Engineer"</span>,
+              <span className="text-terminal-green">"AIML Developer"</span>,
             </div>
             <div className="pl-4">
               <span className="text-white/70">passion:</span>{" "}
-              <span className="text-terminal-green">"Building beautiful web experiences"</span>,
+              <span className="text-terminal-green">"Teaching machines to think, not just work."</span>,
             </div>
             <div className="pl-4">
               <span className="text-white/70">currentlyLearning:</span>{" "}

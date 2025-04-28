@@ -1,59 +1,45 @@
 
-import React from 'react';
 import FadeInSection from '../components/FadeInSection';
 import ProjectCard from '../components/ProjectCard';
 import TerminalHeader from '../components/TerminalHeader';
 
+
 // Sample project data
 const projects = [
   {
-    title: "AI-Powered Code Assistant",
-    description: "A smart coding assistant that helps developers write better code faster by providing intelligent code suggestions and debugging assistance.",
-    technologies: ["React", "TypeScript", "Node.js", "GPT-4", "MongoDB"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+    title: "Driver Drowsiness Detection System",
+    description: "Real-time drowsiness detection using Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) with MediaPipe FaceMesh, enhanced by a pretrained CNN model (NTHU datasets).",
+    technologies: ["Python", "OpenCV", "TensorFlow", "PyTorch", "MediaPipe"],
+    githubLink: "https://github.com/Usersaketh/drowsiness-detection",
+    demoLink: "https://demo.com/drowsiness-detection", 
+    imageUrl: "https://images.unsplash.com/photo-1491295360429-776f75e670e2" 
   },
   {
-    title: "Personal Finance Dashboard",
-    description: "Interactive dashboard for tracking personal finances with visualizations and insights to help users make informed financial decisions.",
-    technologies: ["TypeScript", "D3.js", "Firebase", "React", "Redux"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    title: "JARVIS AI Assistant (AI, NLP)",
+    description: "AI assistant using Gemini API for voice commands, web search, email automation, and weather updates.",
+    technologies: ["Python", "Gemini API", "SpeechRecognition", "pyttsx3"],
+    githubLink: "https://github.com/Usersaketh/jarvis-ai",
+    demoLink: "https://demo.com/jarvis-ai", 
+    imageUrl: "https://images.unsplash.com/photo-1547658718-bbb96c839d89" 
   },
   {
-    title: "E-commerce Platform",
-    description: "Full-featured e-commerce platform with product catalog, shopping cart, payment integration, and order management system.",
-    technologies: ["Next.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+    title: "Odyssey - Travel Journal App (Full Stack)",
+    description: "Full-stack app for travel journaling with authentication, multimedia management, and interactive timeline.",
+    technologies: ["React", "Spring Boot", "MySQL", "Tailwind CSS"],
+    githubLink: "https://github.com/Usersaketh/odyssey",
+    demoLink: "https://demo.com/odyssey", 
+    imageUrl: "https://images.unsplash.com/photo-1501044154230-091e8b1ed1c6" 
   },
   {
-    title: "Real-time Chat Application",
-    description: "Secure and scalable real-time chat application with features like user authentication, message encryption, and file sharing.",
-    technologies: ["React", "Socket.io", "Express", "MongoDB", "JWT"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1"
-  },
-  {
-    title: "Task Management System",
-    description: "Collaborative task management system with kanban board, task assignments, deadlines, and progress tracking.",
-    technologies: ["Vue.js", "Firebase", "Vuex", "Tailwind CSS"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475"
-  },
-  {
-    title: "Weather Forecasting App",
-    description: "Elegant weather forecasting application with location detection, hourly and weekly forecasts, and weather alerts.",
-    technologies: ["React Native", "OpenWeatherMap API", "Redux", "Geolocation"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com"
+    title: "Resume-Revamp (AI-Powered Resume Builder)",
+    description: "AI-driven resume tool with smart suggestions, keyword optimization, and Firebase integration.",
+    technologies: ["React", "Firebase", "Clark Authentication", "Gemini API"],
+    githubLink: "https://github.com/Usersaketh/resume-revamp",
+    demoLink: "https://demo.com/resume-revamp", 
+    imageUrl: "https://images.unsplash.com/photo-1573497163961-285af08f9445" 
   }
 ];
+
 
 const Projects = () => {
   return (
@@ -62,17 +48,18 @@ const Projects = () => {
         <FadeInSection>
           <div className="mb-12">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              <span className="text-terminal-green">$</span> Projects.map(project =&gt; render(project))
+              <span className="text-terminal-green">$</span> Projects.map( project =&gt; render(project))
             </h1>
-            <p className="text-white/60 max-w-2xl">
-              A collection of projects I've built throughout my journey as a developer. 
-              Each project reflects my passion for clean code, user experience, and solving real-world problems.
+            <p className="text-white/60">
+            A collection of projects I've built throughout my journey as a developer.
+            Each project showcases my commitment to clean code, intuitive user interfaces, and solving real-world challenges. 
+            From full-stack applications to AI-driven solutions, these projects reflect my passion for technology and continuous growth as a developer.
             </p>
           </div>
         </FadeInSection>
 
         <div className="terminal-window mb-10">
-          <TerminalHeader path="~/portfolio/projects" />
+          <TerminalHeader path="~/projects" />
           <div className="terminal-body">
             <p className="text-terminal-green">$ ls -la</p>
             <p className="text-white">total {projects.length}</p>

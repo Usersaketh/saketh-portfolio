@@ -1,4 +1,3 @@
-
 import React from 'react';
 import FadeInSection from '../components/FadeInSection';
 import TerminalHeader from '../components/TerminalHeader';
@@ -18,7 +17,7 @@ const About = () => {
             </p>
           </div>
         </FadeInSection>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <FadeInSection>
@@ -28,74 +27,103 @@ const About = () => {
                   <h2 className="text-xl font-bold mb-6 text-terminal-purple">
                     <span className="text-terminal-green">{">"}</span> whoami
                   </h2>
-                  
+
                   <div className="space-y-4 text-white/80">
                     <p>
-                      Hi, I'm Saketh! I'm a full-stack developer with a passion for creating elegant, efficient, and user-friendly web applications. With a background in computer science, I've spent the last several years honing my skills in modern web technologies.
+                      Hi, I'm Saketh! I'm a full-stack developer with a passion for creating elegant, efficient, and user-friendly web applications. With a background in computer science and a specialization in AI and Machine Learning (AIML), I've spent the last several years honing my skills in modern web technologies and exploring the intersection of web development and intelligent systems.
                     </p>
                     <p>
-                      My journey into programming began when I was in high school, tinkering with HTML and CSS to create simple websites. What started as curiosity quickly evolved into a deep passion for software development. I went on to study Computer Science and have been actively coding and learning ever since.
+                      My journey into programming started in college, where I dove into web development and began working on full-stack projects using technologies like React, Node.js, and Java. Along the way, I developed a strong interest in AI and machine learning, and I'm now focused on integrating intelligent systems into the applications I build.
                     </p>
                     <p>
-                      I believe in writing clean, maintainable code and continuously improving my craft. I'm particularly interested in the intersection of technology and user experience - creating applications that not only function well but are also intuitive and enjoyable to use.
+                      I believe in writing clean, maintainable code and continuously improving my craft. I'm particularly interested in how web development and AI can come together to create dynamic, intelligent applications that offer a seamless user experience.
                     </p>
                     <p>
-                      When I'm not coding, you might find me hiking in the mountains, reading sci-fi novels, or experimenting with new recipes in the kitchen. I also enjoy contributing to open-source projects and sharing my knowledge through technical blog posts.
+                      When I'm not coding, I enjoy exploring new tech trends, Playing mobile games, and watching movies. I'm also passionate about AI research, and I keep experimenting with new techniques to integrate machine learning models into real-world applications.
                     </p>
                   </div>
-                  
+
+
                   <h3 className="text-xl font-bold mt-8 mb-4 text-terminal-blue">Work Experience</h3>
-                  
+
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-bold">Senior Frontend Developer</h4>
-                      <p className="text-terminal-green text-sm">TechCorp Inc. | 2021 - Present</p>
+                      <h4 className="font-bold">Frontend Developer Intern</h4>
+                      <p className="text-terminal-green text-sm">Coding Rajas Technologies Ltd. | Jan 2024 - Feb 2024</p>
                       <ul className="list-disc list-inside mt-2 text-white/70 space-y-1">
-                        <li>Led the frontend development for the company's flagship product</li>
-                        <li>Implemented responsive designs and improved performance by 40%</li>
-                        <li>Mentored junior developers and established coding standards</li>
+                        <li>Developed a fully functional music player application using front-end technologies (HTML, CSS, JavaScript).</li>
+                        <li>Improved the user interface and user experience by redesigning key elements, enhancing the overall usability of the player.</li>
                       </ul>
                     </div>
-                    
+
                     <div>
-                      <h4 className="font-bold">Full Stack Developer</h4>
-                      <p className="text-terminal-green text-sm">WebSolutions | 2018 - 2021</p>
+                      <h4 className="font-bold">Data Analyst Intern</h4>
+                      <p className="text-terminal-green text-sm">Deloitte Australia | Mar 2025</p>
                       <ul className="list-disc list-inside mt-2 text-white/70 space-y-1">
-                        <li>Developed and maintained client websites and web applications</li>
-                        <li>Worked with React, Node.js, and MongoDB to build scalable applications</li>
-                        <li>Collaborated with designers to implement pixel-perfect UIs</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold">Junior Developer</h4>
-                      <p className="text-terminal-green text-sm">StartupX | 2016 - 2018</p>
-                      <ul className="list-disc list-inside mt-2 text-white/70 space-y-1">
-                        <li>Assisted in developing new features for the company's web platform</li>
-                        <li>Participated in code reviews and quality assurance</li>
-                        <li>Integrated third-party APIs and services</li>
+                        <li>Worked with large datasets, performing data cleaning and pre-processing to ensure quality and consistency for analysis.</li>
                       </ul>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold mt-8 mb-4 text-terminal-blue">Education</h3>
-                  
+
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold">Bachelor of Science in Computer Science</h4>
-                      <p className="text-terminal-green text-sm">University of Technology | 2012 - 2016</p>
+                      <h4 className="font-bold">Bachelor of Technology - Computer Science Engineering (AIML)</h4>
+                      <p className="text-terminal-green text-sm">Kakatiya Institute of Technology and Science, Warangal | Nov 2022 – Present</p>
                       <p className="text-white/70 mt-1">
-                        Relevant coursework: Data Structures & Algorithms, Database Systems, Web Development, Software Engineering
+                        Relevant courses: Data Structures, Analysis of Algorithms, Artificial Intelligence, Machine Learning, Databases.
                       </p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-bold">Board of Intermediate Education - MPC</h4>
+                      <p className="text-terminal-green text-sm">Sri Chaitanya Jr. College, Khammam | Aug 2020 – Apr 2022</p>
+                      <p className="text-white/70 mt-1">Percentage: 97.3%</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-bold">Board of Secondary Education - SSC</h4>
+                      <p className="text-terminal-green text-sm">Montessori High School, Khammam | March 2020</p>
+                      <p className="text-white/70 mt-1">GPA: 10</p>
                     </div>
                   </div>
                 </div>
               </div>
             </FadeInSection>
           </div>
-          
+
           <div>
             <FadeInSection delay={100}>
+            <div className="terminal-window mb-8">
+              <TerminalHeader path="~/portfolio/certifications" />
+              <div className="terminal-body">
+                <h3 className="text-lg font-bold mb-4 text-terminal-purple">Certifications</h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <span className="text-terminal-green mr-2">▹</span>
+                    <span><strong>Cisco</strong>: Python Essentials 1 (2023)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-terminal-green mr-2">▹</span>
+                    <span><strong>Coursera</strong>: Introduction to HTML, CSS, & JavaScript (IBM) (2023)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-terminal-green mr-2">▹</span>
+                    <span><strong>Coursera</strong>: Python Crash Course (Google) (2023)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-terminal-green mr-2">▹</span>
+                    <span><strong>Coursera</strong>: Introduction to Generative AI (IBM) (2024)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-terminal-green mr-2">▹</span>
+                    <span><strong>Google Cloud</strong>: Specialization in Generative AI Learning Path (Intro to Gen AI, LLMs, Responsible AI) (2024)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
               <div className="terminal-window mb-8">
                 <TerminalHeader path="~/portfolio/interests" />
                 <div className="terminal-body">
@@ -103,29 +131,29 @@ const About = () => {
                   <ul className="space-y-3 text-white/80">
                     <li className="flex items-start">
                       <span className="text-terminal-green mr-2">▹</span>
-                      <span><strong>Open Source</strong>: Contributing to projects that make the web better for everyone</span>
+                      <span><strong>Mobile & Video Games</strong>: Exploring new games and gaming technology.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-terminal-green mr-2">▹</span>
-                      <span><strong>Tech Writing</strong>: Sharing knowledge through tutorials and blog posts</span>
+                      <span><strong>Exploring Tech/Web</strong>: Staying updated on the latest in tech and web development.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-terminal-green mr-2">▹</span>
-                      <span><strong>Hiking</strong>: Exploring trails and disconnecting from technology</span>
+                      <span><strong>Movies</strong>: Watching and analyzing films, particularly in the sci-fi and Romantic genres.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-terminal-green mr-2">▹</span>
-                      <span><strong>Reading</strong>: Science fiction, technology, and philosophy</span>
+                      <span><strong>Travelling</strong>: Exploring new places and experiencing different cultures.</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              
+
               <div className="terminal-window">
                 <TerminalHeader path="~/portfolio/values" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-4 text-terminal-blue">My Values</h3>
-                  
+
                   <CodeBlock>
                     <span className="keyword">function</span> <span className="function">developerValues</span>() {"{"}<br />
                     &nbsp;&nbsp;<span className="keyword">return</span> [<br />
