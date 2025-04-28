@@ -1,9 +1,7 @@
-
 import React from 'react';
 import TypewriterText from '../components/TypewriterText';
 import FadeInSection from '../components/FadeInSection';
-import TerminalHeader from '../components/TerminalHeader';
-import CodeBlock from '../components/CodeBlock';
+import CodeEditorWindow from '../components/CodeEditorWindow';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -13,23 +11,36 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 md:py-32 px-4">
         <div className="container mx-auto">
-          <FadeInSection>
-            <p className="text-terminal-green mb-2 font-mono">Hello, my name is</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              <TypewriterText text="Saketh." speed={100} />
-            </h1>
-            <h2 className="text-2xl md:text-4xl font-bold mb-8 text-white/70">
-              I build things for the web.
-            </h2>
-            <p className="max-w-lg text-white/60 mb-8 leading-relaxed">
-              I'm a software engineer specializing in building exceptional digital experiences.
-              Currently, I'm focused on building accessible, human-centered products.
-            </p>
-            <Link to="/projects" className="inline-flex items-center gap-2 bg-terminal-purple bg-opacity-20 hover:bg-opacity-30 text-terminal-purple px-6 py-3 rounded-md transition-colors border border-terminal-purple/30">
-              Check out my work
-              <ArrowRight size={16} />
-            </Link>
-          </FadeInSection>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column */}
+            <FadeInSection>
+              <div className="space-y-6">
+                <h1 className="text-4xl md:text-6xl font-bold text-white">
+                  Hello, I'm <TypewriterText text="Saketh." speed={100} />
+                </h1>
+                <h2 className="text-2xl md:text-4xl font-bold text-white/70 font-mono">
+                  I build things for the web.
+                </h2>
+                <p className="max-w-lg text-white/60 leading-relaxed">
+                  I'm a software engineer specializing in building exceptional digital experiences.
+                  Currently, I'm focused on creating accessible, human-centered products
+                  that make a difference.
+                </p>
+                <Link 
+                  to="/projects" 
+                  className="inline-flex items-center gap-2 bg-terminal-purple/20 hover:bg-terminal-purple/30 text-terminal-purple px-6 py-3 rounded-md transition-all duration-300 border border-terminal-purple/30 hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(155,135,245,0.3)]"
+                >
+                  Check out my work
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </FadeInSection>
+
+            {/* Right Column */}
+            <div className="relative">
+              <CodeEditorWindow />
+            </div>
+          </div>
         </div>
       </section>
 
