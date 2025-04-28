@@ -1,7 +1,10 @@
+
 import React from 'react';
 import TypewriterText from '../components/TypewriterText';
 import FadeInSection from '../components/FadeInSection';
 import CodeEditorWindow from '../components/CodeEditorWindow';
+import TerminalHeader from '../components/TerminalHeader';
+import CodeBlock from '../components/CodeBlock';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
