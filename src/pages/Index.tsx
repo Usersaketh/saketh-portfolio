@@ -7,31 +7,34 @@ import TerminalHeader from '../components/TerminalHeader';
 import CodeBlock from '../components/CodeBlock';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const Index = () => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 px-4">
+      <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Column */}
             <FadeInSection>
-              <div className="space-y-6">
-                <h1 className="text-4xl md:text-6xl font-bold text-white">
+              <div className="space-y-4 md:space-y-6">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
                   Hello, I'm <TypewriterText text="Saketh." speed={100} />
                 </h1>
-                <h2 className="text-2xl md:text-4xl font-bold text-white/70 font-mono">
+                <h2 className="text-xl md:text-3xl font-bold text-white/70 font-mono">
                   I build things for the web.
                 </h2>
-                <p className="max-w-lg text-white/60 leading-relaxed">
+                <p className="max-w-lg text-white/60 leading-relaxed text-sm md:text-base">
                   I'm a software engineer specializing in building exceptional digital experiences.
                   Currently, I'm focused on creating accessible, human-centered products
                   that make a difference.
                 </p>
                 <Link 
                   to="/projects" 
-                  className="inline-flex items-center gap-2 bg-terminal-purple/20 hover:bg-terminal-purple/30 text-terminal-purple px-6 py-3 rounded-md transition-all duration-300 border border-terminal-purple/30 hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(155,135,245,0.3)]"
+                  className="inline-flex items-center gap-2 bg-terminal-purple/20 hover:bg-terminal-purple/30 text-terminal-purple px-4 py-2 md:px-6 md:py-3 rounded-md transition-all duration-300 border border-terminal-purple/30 hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(155,135,245,0.3)]"
                 >
                   Check out my work
                   <ArrowRight size={16} />
@@ -40,7 +43,7 @@ const Index = () => {
             </FadeInSection>
 
             {/* Right Column */}
-            <div className="relative">
+            <div className="relative mt-6 lg:mt-0">
               <CodeEditorWindow />
             </div>
           </div>
@@ -48,17 +51,17 @@ const Index = () => {
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-16 px-4 bg-terminal-gray bg-opacity-30">
+      <section className="py-12 md:py-16 px-4 bg-terminal-gray bg-opacity-30">
         <div className="container mx-auto">
           <FadeInSection>
             <h2 className="section-title">Featured Projects</h2>
           </FadeInSection>
           
-          <div className="mt-8">
+          <div className="mt-6 md:mt-8">
             <FadeInSection delay={100}>
-              <div className="terminal-window mb-8">
+              <div className="terminal-window mb-6 md:mb-8">
                 <TerminalHeader path="~/portfolio/projects" />
-                <div className="terminal-body">
+                <div className="terminal-body overflow-x-auto">
                   <CodeBlock title="featured-projects.js">
                     <span className="keyword">const</span> <span className="function">featuredProjects</span> = [<br />
                     &nbsp;&nbsp;{"{"}
@@ -90,19 +93,19 @@ const Index = () => {
       </section>
 
       {/* Skills Preview */}
-      <section className="py-16 px-4">
+      <section className="py-12 md:py-16 px-4">
         <div className="container mx-auto">
           <FadeInSection>
             <h2 className="section-title">Skills & Expertise</h2>
           </FadeInSection>
           
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <FadeInSection delay={100}>
               <div className="terminal-window h-full">
                 <TerminalHeader path="~/portfolio/frontend" />
                 <div className="terminal-body">
-                  <h3 className="text-lg font-bold mb-4 text-terminal-blue">Frontend</h3>
-                  <ul className="space-y-2">
+                  <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-terminal-blue">Frontend</h3>
+                  <ul className="space-y-1 md:space-y-2">
                     <li className="flex items-center">
                       <span className="text-terminal-green mr-2">▹</span>
                       <span>React / Next.js</span>
@@ -128,8 +131,8 @@ const Index = () => {
               <div className="terminal-window h-full">
                 <TerminalHeader path="~/portfolio/backend" />
                 <div className="terminal-body">
-                  <h3 className="text-lg font-bold mb-4 text-terminal-blue">Backend</h3>
-                  <ul className="space-y-2">
+                  <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-terminal-blue">Backend</h3>
+                  <ul className="space-y-1 md:space-y-2">
                     <li className="flex items-center">
                       <span className="text-terminal-green mr-2">▹</span>
                       <span>Node.js / Express</span>
@@ -155,8 +158,8 @@ const Index = () => {
               <div className="terminal-window h-full">
                 <TerminalHeader path="~/portfolio/tools" />
                 <div className="terminal-body">
-                  <h3 className="text-lg font-bold mb-4 text-terminal-blue">Tools & Others</h3>
-                  <ul className="space-y-2">
+                  <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-terminal-blue">Tools & Others</h3>
+                  <ul className="space-y-1 md:space-y-2">
                     <li className="flex items-center">
                       <span className="text-terminal-green mr-2">▹</span>
                       <span>Git / GitHub</span>
@@ -179,7 +182,7 @@ const Index = () => {
             </FadeInSection>
           </div>
           
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-6 md:mt-8">
             <Link to="/skills" className="text-terminal-blue hover:text-terminal-purple transition-colors flex items-center space-x-1">
               <span>View all skills</span>
               <ArrowRight size={16} />

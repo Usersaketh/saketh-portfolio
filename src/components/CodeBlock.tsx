@@ -13,7 +13,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ title, children, className = "" }
       {title && (
         <div className="text-xs text-terminal-purple mb-2">// {title}</div>
       )}
-      <div className="overflow-auto">
+      <div className="overflow-auto max-w-full">
         {children}
       </div>
     </div>
