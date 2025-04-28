@@ -12,7 +12,7 @@ const projects = [
     technologies: ["Python", "OpenCV", "TensorFlow", "PyTorch", "MediaPipe"],
     githubLink: "https://github.com/Usersaketh/drowsiness-detection",
     demoLink: "https://demo.com/drowsiness-detection", 
-    imageUrl: "https://images.unsplash.com/photo-1491295360429-776f75e670e2" 
+    imageUrl: "/thumbnails/Drowsiness_Detection.jpeg" 
   },
   {
     title: "JARVIS AI Assistant (AI, NLP)",
@@ -20,7 +20,7 @@ const projects = [
     technologies: ["Python", "Gemini API", "SpeechRecognition", "pyttsx3"],
     githubLink: "https://github.com/Usersaketh/jarvis-ai",
     demoLink: "https://demo.com/jarvis-ai", 
-    imageUrl: "https://images.unsplash.com/photo-1547658718-bbb96c839d89" 
+    imageUrl: "/thumbnails/JARVIS.png" 
   },
   {
     title: "Odyssey - Travel Journal App (Full Stack)",
@@ -28,7 +28,7 @@ const projects = [
     technologies: ["React", "Spring Boot", "MySQL", "Tailwind CSS"],
     githubLink: "https://github.com/Usersaketh/odyssey",
     demoLink: "https://demo.com/odyssey", 
-    imageUrl: "https://images.unsplash.com/photo-1501044154230-091e8b1ed1c6" 
+    imageUrl: "/thumbnails/TRAVEL_JOURNAL.avif" 
   },
   {
     title: "Resume-Revamp (AI-Powered Resume Builder)",
@@ -36,7 +36,7 @@ const projects = [
     technologies: ["React", "Firebase", "Clark Authentication", "Gemini API"],
     githubLink: "https://github.com/Usersaketh/resume-revamp",
     demoLink: "https://demo.com/resume-revamp", 
-    imageUrl: "https://images.unsplash.com/photo-1573497163961-285af08f9445" 
+    imageUrl: "/thumbnails/RESUME_ENHANCER.jpg" 
   }
 ];
 

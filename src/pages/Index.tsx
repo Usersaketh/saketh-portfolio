@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="py-24 md:py-40">
+      <section className="py-20 pb-4 md:py-40">
         <div className="container ">
           <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 md:items-center">
             {/* Left Column */}

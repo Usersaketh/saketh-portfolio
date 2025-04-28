@@ -43,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="w-full h-48 object-cover object-top hover:object-bottom transition-all duration-5000 ease-in-out"
+                className="w-full h-48 object-cover object-top "
               />
             </div>
           )}
