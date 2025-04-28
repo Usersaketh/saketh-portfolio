@@ -22,7 +22,7 @@ const Index = () => {
             <FadeInSection>
               <div className="space-y-4 md:space-y-6">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
-                  Hello, I'm <TypewriterText text="Saketh." speed={100} />
+                  Hello, I'm <br /><TypewriterText text="Dussa Pranay Saketh." speed={100} />
                 </h1>
                 <h2 className="text-xl md:text-3xl font-bold text-white/70 font-mono">
                   I build things for the web.
