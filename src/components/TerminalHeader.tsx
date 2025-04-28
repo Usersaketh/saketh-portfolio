@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 interface TerminalHeaderProps {
   path?: string;
@@ -11,6 +10,8 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({
   path = "~/portfolio", 
   className = "" 
 }) => {
+  console.log('TerminalHeader rendering with path:', path);
+  
   return (
     <div className={`terminal-header ${className}`}>
       <div className="flex items-center space-x-2">
