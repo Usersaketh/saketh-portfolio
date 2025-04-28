@@ -43,7 +43,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen">
       <div className="container mx-auto py-16">
         <FadeInSection>
           <div className="mb-12">

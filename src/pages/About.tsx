@@ -5,7 +5,7 @@ import CodeBlock from '../components/CodeBlock';
 
 const About = () => {
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen">
       <div className="container mx-auto py-16">
         <FadeInSection>
           <div className="mb-12">
@@ -22,7 +22,7 @@ const About = () => {
           <div className="lg:col-span-2">
             <FadeInSection>
               <div className="terminal-window">
-                <TerminalHeader path="~/portfolio/about" />
+                <TerminalHeader path="~/about" />
                 <div className="terminal-body">
                   <h2 className="text-xl font-bold mb-6 text-terminal-purple">
                     <span className="text-terminal-green">{">"}</span> whoami
@@ -96,7 +96,7 @@ const About = () => {
           <div>
             <FadeInSection delay={100}>
             <div className="terminal-window mb-8">
-              <TerminalHeader path="~/portfolio/certifications" />
+              <TerminalHeader path="~/certifications" />
               <div className="terminal-body">
                 <h3 className="text-lg font-bold mb-4 text-terminal-purple">Certifications</h3>
                 <ul className="space-y-3 text-white/80">
@@ -125,7 +125,7 @@ const About = () => {
             </div>
 
               <div className="terminal-window mb-8">
-                <TerminalHeader path="~/portfolio/interests" />
+                <TerminalHeader path="~/interests" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-4 text-terminal-purple">Personal Interests</h3>
                   <ul className="space-y-3 text-white/80">
@@ -150,7 +150,7 @@ const About = () => {
               </div>
 
               <div className="terminal-window">
-                <TerminalHeader path="~/portfolio/values" />
+                <TerminalHeader path="~/values" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-4 text-terminal-blue">My Values</h3>
 

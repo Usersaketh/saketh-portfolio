@@ -1,5 +1,3 @@
-
-import React from 'react';
 import TypewriterText from '../components/TypewriterText';
 import FadeInSection from '../components/FadeInSection';
 import CodeEditorWindow from '../components/CodeEditorWindow';
@@ -13,10 +11,10 @@ const Index = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="py-16 md:py-40 px-4">
-        <div className="container mx-auto">
+      <section className="py-24 md:py-40">
+        <div className="container ">
           <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 md:items-center">
             {/* Left Column */}
             <FadeInSection>
@@ -57,16 +55,18 @@ const Index = () => {
             </FadeInSection>
 
             {/* Right Column */}
+            {isMobile? null : (
             <div className="relative mt-6 lg:mt-0">
               <CodeEditorWindow />
             </div>
+            )}
           </div>
         </div>
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-12 md:py-16 px-4 bg-terminal-gray bg-opacity-30">
-        <div className="container mx-auto">
+      <section className="py-12 md:py-16  bg-terminal-gray bg-opacity-30">
+        <div className="container">
           <FadeInSection>
             <h2 className="section-title">Featured Projects</h2>
           </FadeInSection>
@@ -109,7 +109,7 @@ const Index = () => {
       </section>
 
       {/* Skills Preview */}
-      <section className="py-12 md:py-16 px-4">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto">
           <FadeInSection>
             <h2 className="section-title">Skills & Expertise</h2>

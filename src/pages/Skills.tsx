@@ -54,7 +54,7 @@ const softSkills = [
 
 const Skills = () => {
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen">
       <div className="container mx-auto py-16">
         <FadeInSection>
           <div className="mb-12">
@@ -72,9 +72,8 @@ const Skills = () => {
           <FadeInSection>
             <CodeBlock title="skills.js" className="mb-8">
               <span className="keyword">const</span> <span className="function">developerProfile</span> = {"{"}<br />
-              &nbsp;&nbsp;name: <span className="string">"Saketh"</span>,<br />
-              &nbsp;&nbsp;title: <span className="string">"Full Stack Developer"</span>,<br />
-              &nbsp;&nbsp;yearsOfExperience: <span className="string">5</span>,<br />
+              &nbsp;&nbsp;name: <span className="string">"Dussa Pranay Saketh"</span>,<br />
+              &nbsp;&nbsp;title: <span className="string">"Web and AIML Developer"</span>,<br />
               &nbsp;&nbsp;skills: {"{"}
               <br />
               &nbsp;&nbsp;&nbsp;&nbsp;languages: [<span className="string">"C"</span>, <span className="string">"C++"</span>, <span className="string">"Java"</span>, <span className="string">"Python"</span>, <span className="string">"HTML"</span>, <span className="string">"CSS"</span>, <span className="string">"JavaScript"</span>, <span className="string">"SQL"</span>],<br />
@@ -92,7 +91,7 @@ const Skills = () => {
           <div>
             <FadeInSection>
               <div className="terminal-window h-full">
-                <TerminalHeader path="~/portfolio/skills/languages" />
+                <TerminalHeader path="~/languages" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-6 text-terminal-blue">Languages</h3>
                   {languages.map((skill, index) => (
@@ -113,7 +112,7 @@ const Skills = () => {
           <div>
             <FadeInSection delay={100}>
               <div className="terminal-window h-full">
-                <TerminalHeader path="~/portfolio/skills/frameworks" />
+                <TerminalHeader path="~/frameworks" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-6 text-terminal-green">Frameworks</h3>
                   {frameworks.map((skill, index) => (
@@ -134,7 +133,7 @@ const Skills = () => {
           <div>
             <FadeInSection delay={200}>
               <div className="terminal-window h-full">
-                <TerminalHeader path="~/portfolio/skills/technical-areas" />
+                <TerminalHeader path="~/technical-areas" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-6 text-terminal-purple">Technical Areas</h3>
                   {technicalAreas.map((skill, index) => (
@@ -156,7 +155,7 @@ const Skills = () => {
           <div className="mt-16">
             <h3 className="text-xl font-bold mb-4 text-white">Other Skills & Interests</h3>
             <div className="terminal-window">
-              <TerminalHeader path="~/portfolio/skills/other" />
+              <TerminalHeader path="~/others" />
               <div className="terminal-body">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">

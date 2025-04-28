@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen">
       <div className="container mx-auto py-16">
         <FadeInSection>
           <div className="mb-12">
@@ -58,7 +58,7 @@ const Contact = () => {
           {/* Contact Form */}
           <FadeInSection>
             <div className="terminal-window">
-              <TerminalHeader path="~/portfolio/contact" />
+              <TerminalHeader path="~/contact" />
               <div className="terminal-body">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -135,7 +135,7 @@ const Contact = () => {
           <div>
             <FadeInSection delay={100}>
               <div className="terminal-window mb-8">
-                <TerminalHeader path="~/portfolio/contact-info" />
+                <TerminalHeader path="~/contact-info" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-6 text-terminal-green">Get in Touch</h3>
                   
@@ -170,7 +170,7 @@ const Contact = () => {
               </div>
               
               <div className="terminal-window">
-                <TerminalHeader path="~/portfolio/availability" />
+                <TerminalHeader path="~/availability" />
                 <div className="terminal-body">
                   <h3 className="text-lg font-bold mb-4 text-terminal-blue">Availability</h3>
                   
