@@ -1,6 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,35 +7,48 @@
 
 @layer base {
   :root {
-    --background: 220 13% 8%;
-    --foreground: 210 40% 98%;
-
-    --card: 220 13% 10%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 13% 10%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 100% 52%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 265 89% 78%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 142 70.6% 45.3%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
+    --secondary: 241 245 249;
+    --secondary-foreground: 51 65 85;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+    --accent: 241 245 249;
+    --accent-foreground: 51 65 85;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
     --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 2 6 23;
+    --foreground: 248 250 252;
+    --card: 15 23 42;
+    --card-foreground: 248 250 252;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --primary: 99 102 241;
+    --primary-foreground: 255 255 255;
+    --secondary: 30 41 59;
+    --secondary-foreground: 226 232 240;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 30 41 59;
+    --accent-foreground: 226 232 240;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 99 102 241;
   }
 }
 
@@ -46,100 +58,109 @@
   }
 
   body {
-    @apply bg-terminal-darkGray bg-noise text-foreground font-mono;
-    background-blend-mode: overlay;
-    background-size: 100px 100px;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Scrollbar styling */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-terminal-gray;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-terminal-purple bg-opacity-60 rounded-full;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  .code-block {
-    @apply bg-terminal-gray rounded p-4 font-mono text-sm leading-relaxed overflow-auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 py-20;
   }
-  
-  .terminal-window {
-    @apply bg-terminal-gray rounded-md overflow-hidden border border-white/10;
+
+  .gradient-bg {
+    background: linear-gradient(135deg, rgb(99 102 241 / 0.1) 0%, rgb(59 130 246 / 0.1) 100%);
   }
-  
-  .terminal-header {
-    @apply bg-black bg-opacity-30 px-4 py-2 flex items-center justify-between border-b border-white/10;
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
-  
-  .terminal-body {
-    @apply p-4 font-mono text-sm;
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent;
   }
-  
-  .comment {
-    @apply text-muted-foreground;
-  }
-  
-  .keyword {
-    @apply text-terminal-blue;
-  }
-  
-  .function {
-    @apply text-terminal-purple;
-  }
-  
-  .string {
-    @apply text-terminal-green;
-  }
-  
-  .section-title {
-    @apply text-lg md:text-xl font-bold mb-4 text-white relative;
-  }
-  
-  .section-title::before {
-    content: "//";
-    @apply text-terminal-purple mr-2;
-  }
-  
+
   .nav-link {
-    @apply relative text-white/70 hover:text-white transition-colors duration-200;
+    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-200;
   }
-  
+
   .nav-link.active {
-    @apply text-white;
+    @apply text-foreground;
   }
-  
-  .nav-link.active::after {
+
+  .nav-link::after {
     content: "";
-    @apply absolute bottom-0 left-0 h-0.5 w-full bg-terminal-purple block;
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300;
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 border border-border hover:border-border/80;
   }
 }
 
-.typewriter {
-  overflow: hidden;
-  border-right: 2px solid #4AF626;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.1em;
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret 0.75s step-end infinite;
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #4AF626; }
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
 }

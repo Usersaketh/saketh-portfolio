@@ -1,6 +1,5 @@
 
 import React from 'react';
-import FadeInSection from './FadeInSection';
 
 interface SkillTagProps {
   name: string;
@@ -8,38 +7,33 @@ interface SkillTagProps {
   index: number;
 }
 
-const SkillTag: React.FC<SkillTagProps> = ({ 
-  name, 
-  category,
-  index
-}) => {
+const SkillTag: React.FC<SkillTagProps> = ({ name, category, index }) => {
   const getCategoryStyles = () => {
     switch (category) {
       case 'language':
-        return 'bg-terminal-blue/20 text-terminal-blue border-terminal-blue/30 hover:bg-terminal-blue/30';
+        return 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800';
       case 'framework':
-        return 'bg-terminal-green/20 text-terminal-green border-terminal-green/30 hover:bg-terminal-green/30';
+        return 'bg-green-50 text-green-700 border-green-200 dark:bg-green-950 dark:text-green-300 dark:border-green-800';
       case 'technical':
-        return 'bg-terminal-purple/20 text-terminal-purple border-terminal-purple/30 hover:bg-terminal-purple/30';
+        return 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800';
       case 'tool':
-        return 'bg-white/10 text-white border-white/20 hover:bg-white/20';
+        return 'bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-950 dark:text-orange-300 dark:border-orange-800';
       default:
-        return 'bg-white/10 text-white border-white/20 hover:bg-white/20';
+        return 'bg-secondary text-secondary-foreground border-border';
     }
   };
 
   return (
-    <FadeInSection delay={index * 50}>
-      <div 
-        className={`
-          inline-block px-4 py-2 rounded-full border font-mono text-sm
-          transition-all duration-300 hover:scale-105 cursor-default
-          ${getCategoryStyles()}
-        `}
-      >
-        {name}
-      </div>
-    </FadeInSection>
+    <div 
+      className={`
+        inline-block px-4 py-2 rounded-lg border text-sm font-medium
+        transition-all duration-300 hover:scale-105 cursor-default
+        ${getCategoryStyles()}
+      `}
+      style={{ animationDelay: `${index * 50}ms` }}
+    >
+      {name}
+    </div>
   );
 };
 

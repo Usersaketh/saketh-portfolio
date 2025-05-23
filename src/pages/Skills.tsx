@@ -1,11 +1,7 @@
 
 import React from 'react';
-import FadeInSection from '../components/FadeInSection';
 import SkillTag from '../components/SkillTag';
-import TerminalHeader from '../components/TerminalHeader';
-import CodeBlock from '../components/CodeBlock';
 
-// Organized skill data by categories
 const skillCategories = {
   languages: [
     'C', 'C++', 'Java', 'Python', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'SQL'
@@ -34,150 +30,116 @@ const areasOfInterest = [
 const Skills = () => {
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto py-8 px-4 md:py-16">
-        <FadeInSection>
-          <div className="mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              <span className="text-terminal-green">$</span> Skills & Expertise
-            </h1>
-            <p className="text-white/60 max-w-2xl">
-              A comprehensive overview of my technical skills and expertise areas. 
-              I'm constantly learning and expanding this list to stay current with industry trends.
-            </p>
-          </div>
-        </FadeInSection>
-        
-        <div className="mb-16">
-          <FadeInSection>
-            <CodeBlock title="skills.js" className="mb-8">
-              <span className="keyword">const</span> <span className="function">developerProfile</span> = {"{"}<br />
-              &nbsp;&nbsp;name: <span className="string">"Dussa Pranay Saketh"</span>,<br />
-              &nbsp;&nbsp;title: <span className="string">"Web and AIML Developer"</span>,<br />
-              &nbsp;&nbsp;expertise: {"{"}
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;languages: [<span className="string">"C"</span>, <span className="string">"C++"</span>, <span className="string">"Java"</span>, <span className="string">"Python"</span>, <span className="string">"JavaScript"</span>, <span className="string">"TypeScript"</span>],<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;frameworks: [<span className="string">"React"</span>, <span className="string">"Next.js"</span>, <span className="string">"Node.js"</span>, <span className="string">"TensorFlow"</span>],<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;specialization: [<span className="string">"Deep Learning"</span>, <span className="string">"Computer Vision"</span>, <span className="string">"Generative AI"</span>]<br />
-              &nbsp;&nbsp;{"}"}<br />
-              {"}"};
-            </CodeBlock>
-          </FadeInSection>
+      <div className="section-container">
+        <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-bold">Skills & Expertise</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive overview of my technical skills and expertise areas. 
+            I'm constantly learning and expanding this list to stay current with industry trends.
+          </p>
         </div>
         
-        <div className="space-y-12">
+        <div className="space-y-16">
           {/* Programming Languages */}
-          <FadeInSection>
-            <div className="terminal-window">
-              <TerminalHeader path="~/languages" />
-              <div className="terminal-body">
-                <h3 className="text-xl font-bold mb-6 text-terminal-blue flex items-center">
-                  <span className="mr-3">💻</span>
-                  Programming Languages
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillCategories.languages.map((skill, index) => (
-                    <SkillTag
-                      key={skill}
-                      name={skill}
-                      category="language"
-                      index={index}
-                    />
-                  ))}
-                </div>
+          <div className="animate-fade-in-up">
+            <div className="bg-card rounded-xl p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 flex items-center text-blue-600 dark:text-blue-400">
+                <span className="mr-3">💻</span>
+                Programming Languages
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {skillCategories.languages.map((skill, index) => (
+                  <SkillTag
+                    key={skill}
+                    name={skill}
+                    category="language"
+                    index={index}
+                  />
+                ))}
               </div>
             </div>
-          </FadeInSection>
+          </div>
 
           {/* Frameworks & Technologies */}
-          <FadeInSection delay={100}>
-            <div className="terminal-window">
-              <TerminalHeader path="~/frameworks" />
-              <div className="terminal-body">
-                <h3 className="text-xl font-bold mb-6 text-terminal-green flex items-center">
-                  <span className="mr-3">🚀</span>
-                  Frameworks & Technologies
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillCategories.frameworks.map((skill, index) => (
-                    <SkillTag
-                      key={skill}
-                      name={skill}
-                      category="framework"
-                      index={index}
-                    />
-                  ))}
-                </div>
+          <div className="animate-fade-in-up animate-delay-100">
+            <div className="bg-card rounded-xl p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 flex items-center text-green-600 dark:text-green-400">
+                <span className="mr-3">🚀</span>
+                Frameworks & Technologies
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {skillCategories.frameworks.map((skill, index) => (
+                  <SkillTag
+                    key={skill}
+                    name={skill}
+                    category="framework"
+                    index={index}
+                  />
+                ))}
               </div>
             </div>
-          </FadeInSection>
+          </div>
 
           {/* Technical Expertise */}
-          <FadeInSection delay={200}>
-            <div className="terminal-window">
-              <TerminalHeader path="~/technical-expertise" />
-              <div className="terminal-body">
-                <h3 className="text-xl font-bold mb-6 text-terminal-purple flex items-center">
-                  <span className="mr-3">🧠</span>
-                  Technical Expertise
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillCategories.technical.map((skill, index) => (
-                    <SkillTag
-                      key={skill}
-                      name={skill}
-                      category="technical"
-                      index={index}
-                    />
-                  ))}
-                </div>
+          <div className="animate-fade-in-up animate-delay-200">
+            <div className="bg-card rounded-xl p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 flex items-center text-purple-600 dark:text-purple-400">
+                <span className="mr-3">🧠</span>
+                Technical Expertise
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {skillCategories.technical.map((skill, index) => (
+                  <SkillTag
+                    key={skill}
+                    name={skill}
+                    category="technical"
+                    index={index}
+                  />
+                ))}
               </div>
             </div>
-          </FadeInSection>
+          </div>
 
           {/* Tools & Platforms */}
-          <FadeInSection delay={300}>
-            <div className="terminal-window">
-              <TerminalHeader path="~/tools" />
-              <div className="terminal-body">
-                <h3 className="text-xl font-bold mb-6 text-white flex items-center">
-                  <span className="mr-3">🛠️</span>
-                  Tools & Platforms
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillCategories.tools.map((skill, index) => (
-                    <SkillTag
-                      key={skill}
-                      name={skill}
-                      category="tool"
-                      index={index}
-                    />
-                  ))}
-                </div>
+          <div className="animate-fade-in-up animate-delay-300">
+            <div className="bg-card rounded-xl p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 flex items-center text-orange-600 dark:text-orange-400">
+                <span className="mr-3">🛠️</span>
+                Tools & Platforms
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {skillCategories.tools.map((skill, index) => (
+                  <SkillTag
+                    key={skill}
+                    name={skill}
+                    category="tool"
+                    index={index}
+                  />
+                ))}
               </div>
             </div>
-          </FadeInSection>
+          </div>
 
           {/* Areas of Interest */}
-          <FadeInSection delay={400}>
-            <div className="terminal-window">
-              <TerminalHeader path="~/interests" />
-              <div className="terminal-body">
-                <h3 className="text-xl font-bold mb-6 text-white flex items-center">
-                  <span className="mr-3">🎯</span>
-                  Areas of Interest
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {areasOfInterest.map((interest, index) => (
-                    <FadeInSection key={interest} delay={index * 100}>
-                      <div className="p-4 bg-terminal-gray/30 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-terminal-gray/40">
-                        <span className="text-white font-mono text-sm">{interest}</span>
-                      </div>
-                    </FadeInSection>
-                  ))}
-                </div>
+          <div className="animate-fade-in-up animate-delay-300">
+            <div className="bg-card rounded-xl p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <span className="mr-3">🎯</span>
+                Areas of Interest
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {areasOfInterest.map((interest, index) => (
+                  <div
+                    key={interest}
+                    className="p-4 bg-muted rounded-lg border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-md"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <span className="font-medium">{interest}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </FadeInSection>
+          </div>
         </div>
       </div>
     </div>

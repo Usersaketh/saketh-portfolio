@@ -1,209 +1,219 @@
-import TypewriterText from '../components/TypewriterText';
-import FadeInSection from '../components/FadeInSection';
-import CodeEditorWindow from '../components/CodeEditorWindow';
-import TerminalHeader from '../components/TerminalHeader';
-import CodeBlock from '../components/CodeBlock';
+
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { useIsMobile } from '../hooks/use-mobile';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Index = () => {
-  const isMobile = useIsMobile();
-
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 pb-4 md:py-40">
-        <div className="container ">
-          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 md:items-center">
-            {/* Left Column */}
-            <FadeInSection>
-              <div className="space-y-4 md:space-y-6">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
-                  Hello, I'm <br /><TypewriterText text="Dussa Pranay Saketh." speed={150} />
-                </h1>
-                <h2 className="text-xl md:text-3xl font-bold text-white/70 font-mono">
-                  Aspiring AI/ML Engineer | MERN Developer
-                </h2>
-                <p className="max-w-xl text-white/60 text-sm md:text-base">
-                A creative full-stack engineer and AI/ML practitioner who loves building smart, data-driven applications that deliver intuitive user experiences.
-                </p>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <Link
-                    to="/about"
-                    className="inline-flex items-center gap-2 bg-terminal-green/10 hover:bg-terminal-green/20 text-terminal-green px-4 py-2 md:px-6 md:py-3 rounded-md transition-all duration-300 border border-terminal-green/30 hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(50,205,50,0.3)]"
-                  >
-                    About Me
-                    <ArrowRight size={16} />
-                  </Link>
-                  <Link
-                    to="/projects"
-                    className="inline-flex items-center gap-2 bg-terminal-blue/10 hover:bg-terminal-blue/20 text-terminal-blue px-4 py-2 md:px-6 md:py-3 rounded-md transition-all duration-300 border border-terminal-blue/30 hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(100,200,255,0.3)]"
-                  >Check out my work
-                    
-                    <ArrowRight size={16} />
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 bg-terminal-purple/20 hover:bg-terminal-purple/30 text-terminal-purple px-4 py-2 md:px-6 md:py-3 rounded-md transition-all duration-300 border border-terminal-purple/30 hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(155,135,245,0.3)]"
-                  >
-                    Get in touch
-                    <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
-            </FadeInSection>
-
-            {/* Right Column */}
-            {isMobile? null : (
-            <div className="relative mt-6 lg:mt-0">
-              <CodeEditorWindow />
+      <section className="section-container min-h-[80vh] flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8 animate-fade-in-up">
+            <div className="space-y-4">
+              <p className="text-primary font-medium">Hi, I'm</p>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                Dussa Pranay <span className="text-gradient">Saketh</span>
+              </h1>
+              <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
+                Aspiring AI/ML Engineer & MERN Developer
+              </h2>
             </div>
-            )}
+            
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              A creative full-stack engineer and AI/ML practitioner who loves building smart, 
+              data-driven applications that deliver intuitive user experiences.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/projects" className="btn-primary inline-flex items-center gap-2">
+                View My Work
+                <ArrowRight size={18} />
+              </Link>
+              <Link to="/contact" className="btn-secondary inline-flex items-center gap-2">
+                Get In Touch
+                <Mail size={18} />
+              </Link>
+            </div>
+            
+            <div className="flex items-center gap-6 pt-4">
+              <a
+                href="https://github.com/Usersaketh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/saketh190705/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="mailto:sakethdussa1234@gmail.com"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Mail size={24} />
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Preview */}
-      <section className="py-12 md:py-16  bg-terminal-gray bg-opacity-30">
-        <div className="container">
-          <FadeInSection>
-            <h2 className="section-title">Featured Projects</h2>
-          </FadeInSection>
           
-          <div className="mt-6 md:mt-8">
-            <FadeInSection delay={50}>
-              <div className="terminal-window mb-6 md:mb-8">
-                <TerminalHeader path="~/projects" />
-                <div className="terminal-body overflow-x-auto">
-                <CodeBlock title="featured-projects.js">
-                  <span className="keyword">const</span> <span className="function">featuredProjects</span> = [<br />
-                  &nbsp;&nbsp;{"{"}
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;name: <span className="string">"Driver Drowsiness Detection System"</span>,<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;description: <span className="string">"Real-time drowsiness detection using Eye Aspect Ratio (EAR) and a CNN model trained on the NTHU dataset."</span>,<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;tech: [<span className="string">"Python"</span>, <span className="string">"OpenCV"</span>, <span className="string">"TensorFlow"</span>, <span className="string">"MediaPipe"</span>]<br />
-                  &nbsp;&nbsp;{"}"},<br />
-                  &nbsp;&nbsp;{"{"}
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;name: <span className="string">"Resume-Revamp (AI-Powered Resume Builder)"</span>,<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;description: <span className="string">"AI-driven resume builder offering smart suggestions, keyword optimization, and Firebase integration."</span>,<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;tech: [<span className="string">"React"</span>, <span className="string">"Firebase"</span>, <span className="string">"Gemini API"</span>]<br />
-                  &nbsp;&nbsp;{"}"}
-                  <br />
-                  ];
-                </CodeBlock>
-
+          <div className="relative animate-slide-in-right animate-delay-200">
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 p-8">
+                <div className="w-full h-full bg-card rounded-xl shadow-xl flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">S</span>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="font-semibold">Full Stack Developer</p>
+                      <p className="text-sm text-muted-foreground">AI/ML Enthusiast</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </FadeInSection>
-            
-            <div className="flex justify-center">
-              <Link to="/projects" className="text-terminal-blue hover:text-terminal-purple transition-colors flex items-center space-x-1">
-                <span>View all projects</span>
-                <ArrowRight size={16} />
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Skills Preview */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto">
-          <FadeInSection>
-            <h2 className="section-title">Skills & Expertise</h2>
-          </FadeInSection>
-          
-          <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <FadeInSection delay={100}>
-              <div className="terminal-window h-full">
-                <TerminalHeader path="~/frontend" />
-                <div className="terminal-body">
-                  <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-terminal-blue">Frontend</h3>
-                  <ul className="space-y-1 md:space-y-2">
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>React / Next.js</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>TypeScript</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>Tailwind CSS</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>	Shadcn / UI</span>
-                    </li>
-                  </ul>
-                </div>
+      <section className="section-container bg-muted/50">
+        <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+          <h2 className="text-3xl md:text-4xl font-bold">What I Do</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Specialized in modern web technologies and artificial intelligence
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-card p-8 rounded-xl shadow-sm card-hover animate-fade-in-up">
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <span className="text-primary text-xl">🚀</span>
               </div>
-            </FadeInSection>
-            
-            <FadeInSection delay={100}>
-              <div className="terminal-window h-full">
-                <TerminalHeader path="~/backend" />
-                <div className="terminal-body">
-                  <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-terminal-blue">Backend</h3>
-                  <ul className="space-y-1 md:space-y-2">
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>Node.js / Express</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>JAVA / Springboot</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>MongoDB / MYSQL</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>Firebase</span>
-                    </li>
-                  </ul>
-                </div>
+              <h3 className="text-xl font-semibold">Frontend Development</h3>
+              <p className="text-muted-foreground">
+                Building responsive and interactive user interfaces with React, Next.js, and modern CSS
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">React</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">TypeScript</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Tailwind</span>
               </div>
-            </FadeInSection>
-            
-            <FadeInSection delay={150}>
-              <div className="terminal-window h-full">
-                <TerminalHeader path="~/tools" />
-                <div className="terminal-body">
-                  <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-terminal-blue">Tools & Others</h3>
-                  <ul className="space-y-1 md:space-y-2">
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>Git / GitHub - Version Control</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>TensorFlow / Keras </span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>OpenCV / MediaPipe</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-terminal-green mr-2">▹</span>
-                      <span>Canva / Figma - UI prototyping</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </FadeInSection>
+            </div>
           </div>
           
-          <div className="flex justify-center mt-6 md:mt-8">
-            <Link to="/skills" className="text-terminal-blue hover:text-terminal-purple transition-colors flex items-center space-x-1">
-              <span>View all skills</span>
-              <ArrowRight size={16} />
-            </Link>
+          <div className="bg-card p-8 rounded-xl shadow-sm card-hover animate-fade-in-up animate-delay-100">
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <span className="text-primary text-xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-semibold">Backend Development</h3>
+              <p className="text-muted-foreground">
+                Creating robust APIs and server-side applications with Node.js, Express, and databases
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Node.js</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">MongoDB</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">MySQL</span>
+              </div>
+            </div>
           </div>
+          
+          <div className="bg-card p-8 rounded-xl shadow-sm card-hover animate-fade-in-up animate-delay-200">
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <span className="text-primary text-xl">🧠</span>
+              </div>
+              <h3 className="text-xl font-semibold">AI & Machine Learning</h3>
+              <p className="text-muted-foreground">
+                Developing intelligent systems with TensorFlow, computer vision, and deep learning
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Python</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">TensorFlow</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">OpenCV</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center mt-12">
+          <Link to="/skills" className="btn-secondary inline-flex items-center gap-2">
+            View All Skills
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="section-container">
+        <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+          <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A selection of projects that showcase my skills and passion for development
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-card rounded-xl overflow-hidden shadow-sm card-hover animate-fade-in-up">
+            <div className="aspect-video bg-gradient-to-br from-primary/20 to-blue-500/20"></div>
+            <div className="p-6 space-y-4">
+              <h3 className="text-xl font-semibold">Driver Drowsiness Detection System</h3>
+              <p className="text-muted-foreground">
+                Real-time drowsiness detection using Eye Aspect Ratio and CNN model trained on NTHU dataset
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Python</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">OpenCV</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">TensorFlow</span>
+              </div>
+              <div className="flex gap-4 pt-2">
+                <a href="https://github.com/Usersaketh/drowsiness-detection" className="text-primary hover:underline">
+                  View Code
+                </a>
+                <a href="#" className="text-primary hover:underline">
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-card rounded-xl overflow-hidden shadow-sm card-hover animate-fade-in-up animate-delay-100">
+            <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20"></div>
+            <div className="p-6 space-y-4">
+              <h3 className="text-xl font-semibold">Resume-Revamp AI Builder</h3>
+              <p className="text-muted-foreground">
+                AI-powered resume builder with smart suggestions, keyword optimization, and Firebase integration
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">React</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Firebase</span>
+                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Gemini API</span>
+              </div>
+              <div className="flex gap-4 pt-2">
+                <a href="https://github.com/Usersaketh/resume-revamp" className="text-primary hover:underline">
+                  View Code
+                </a>
+                <a href="#" className="text-primary hover:underline">
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center mt-12">
+          <Link to="/projects" className="btn-primary inline-flex items-center gap-2">
+            View All Projects
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
     </div>
