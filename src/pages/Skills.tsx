@@ -1,146 +1,191 @@
-
 import React from 'react';
-import SkillTag from '../components/SkillTag';
+import FadeInSection from '../components/FadeInSection';
+import SkillBar from '../components/SkillBar';
+import TerminalHeader from '../components/TerminalHeader';
+import CodeBlock from '../components/CodeBlock';
 
-const skillCategories = {
-  languages: [
-    'C', 'C++', 'Java', 'Python', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'SQL'
-  ],
-  frameworks: [
-    'React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'TensorFlow', 'Keras', 'Spring Boot'
-  ],
-  technical: [
-    'Data Structures', 'Object-Oriented Programming', 'Deep Learning', 'Computer Vision', 
-    'Prompt Engineering', 'Generative AI', 'REST APIs', 'Algorithm Design'
-  ],
-  tools: [
-    'Git', 'GitHub', 'Figma', 'OpenCV', 'MediaPipe', 'Tailwind CSS', 'Firebase', 'Vercel'
-  ]
-};
+// Sample skill data based on your provided list
+const languages = [
+  { name: 'C', level: 85 },
+  { name: 'C++', level: 80 },
+  { name: 'Java', level: 85 },
+  { name: 'Python', level: 90 },
+  { name: 'HTML', level: 95 },
+  { name: 'CSS', level: 85 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'SQL', level: 80 }
+];
+
+const frameworks = [
+  { name: 'MERN Stack (MongoDB, Express, React, Node.js)', level: 90 },
+  { name: 'Next.js', level: 85 },
+  { name: 'Tailwind CSS', level: 80 },
+  { name: 'TensorFlow & Keras', level: 70 },
+  { name: 'OpenCV & MediaPipe', level: 80 },
+  { name: 'Spring Boot', level: 75 },
+  { name: 'Git', level: 90 },
+  { name: 'Figma', level: 85 },
+  { name: 'REST APIs', level: 80 }
+];
+
+const technicalAreas = [
+  { name: 'Data Structures', level: 90 },
+  { name: 'Object-Oriented Programming (OOP)', level: 85 },
+  { name: 'Deep Learning (DL)', level: 80 },
+  { name: 'Computer Vision (CVIP)', level: 80 },
+  { name: 'Prompt Engineering', level: 95 },
+  { name: 'Generative AI (Gen AI)', level: 90 }
+];
 
 const areasOfInterest = [
   'AI Research',
-  'Ethical Hacking',
+  'Hacking',
   'Deep Learning',
-  'Computer Vision (CVIP)',
-  'Machine Learning',
-  'Web Development'
+  'Computer Vision (CVIP)'
+];
+
+const softSkills = [
+  'Leadership',
+  'Communication',
+  'Teamwork',
+  'Problem-Solving',
+  'Time Management'
 ];
 
 const Skills = () => {
   return (
     <div className="min-h-screen">
-      <div className="section-container">
-        <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold">Skills & Expertise</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and expertise areas. 
-            I'm constantly learning and expanding this list to stay current with industry trends.
-          </p>
+      <div className="container mx-auto py-16">
+        <FadeInSection>
+          <div className="mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <span className="text-terminal-green">$</span> Skills & Expertise
+            </h1>
+            <p className="text-white/60 ">
+              A comprehensive overview of my technical skills and proficiency levels. 
+              I'm constantly learning and expanding this list to stay current with industry trends.
+            </p>
+          </div>
+        </FadeInSection>
+        
+        <div className="mb-16">
+          <FadeInSection>
+            <CodeBlock title="skills.js" className="mb-8">
+              <span className="keyword">const</span> <span className="function">developerProfile</span> = {"{"}<br />
+              &nbsp;&nbsp;name: <span className="string">"Dussa Pranay Saketh"</span>,<br />
+              &nbsp;&nbsp;title: <span className="string">"Web and AIML Developer"</span>,<br />
+              &nbsp;&nbsp;skills: {"{"}
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;languages: [<span className="string">"C"</span>, <span className="string">"C++"</span>, <span className="string">"Java"</span>, <span className="string">"Python"</span>, <span className="string">"HTML"</span>, <span className="string">"CSS"</span>, <span className="string">"JavaScript"</span>, <span className="string">"SQL"</span>],<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;frameworks: [<span className="string">"MERN Stack"</span>, <span className="string">"Next.js"</span>, <span className="string">"Tailwind CSS"</span>, <span className="string">"TensorFlow & Keras"</span>, <span className="string">"OpenCV & MediaPipe"</span>, <span className="string">"Spring Boot"</span>, <span className="string">"Firebase"</span>, <span className="string">"Git"</span>, <span className="string">"Figma"</span>],<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;technicalAreas: [<span className="string">"Data Structures"</span>, <span className="string">"OOP"</span>, <span className="string">"Deep Learning"</span>, <span className="string">"Computer Vision"</span>, <span className="string">"Prompt Engineering"</span>, <span className="string">"Generative AI"</span>]<br />
+              &nbsp;&nbsp;{"}"}<br />
+              &nbsp;&nbsp;learning: [<span className="string">"AI Research"</span>, <span className="string">"Hacking"</span>, <span className="string">"Deep Learning"</span>, <span className="string">"Computer Vision"</span>]<br />
+              {"}"};
+            </CodeBlock>
+          </FadeInSection>
         </div>
         
-        <div className="space-y-16">
-          {/* Programming Languages */}
-          <div className="animate-fade-in-up">
-            <div className="bg-card rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center text-blue-600 dark:text-blue-400">
-                <span className="mr-3">💻</span>
-                Programming Languages
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skillCategories.languages.map((skill, index) => (
-                  <SkillTag
-                    key={skill}
-                    name={skill}
-                    category="language"
-                    index={index}
-                  />
-                ))}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Languages */} 
+          <div>
+            <FadeInSection>
+              <div className="terminal-window h-full">
+                <TerminalHeader path="~/languages" />
+                <div className="terminal-body">
+                  <h3 className="text-lg font-bold mb-6 text-terminal-blue">Languages</h3>
+                  {languages.map((skill, index) => (
+                    <SkillBar
+                      key={index}
+                      name={skill.name}
+                      level={skill.level}
+                      color="bg-terminal-blue"
+                      index={index}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeInSection>
           </div>
 
-          {/* Frameworks & Technologies */}
-          <div className="animate-fade-in-up animate-delay-100">
-            <div className="bg-card rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center text-green-600 dark:text-green-400">
-                <span className="mr-3">🚀</span>
-                Frameworks & Technologies
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skillCategories.frameworks.map((skill, index) => (
-                  <SkillTag
-                    key={skill}
-                    name={skill}
-                    category="framework"
-                    index={index}
-                  />
-                ))}
+          {/* Frameworks */} 
+          <div>
+            <FadeInSection delay={100}>
+              <div className="terminal-window h-full">
+                <TerminalHeader path="~/frameworks" />
+                <div className="terminal-body">
+                  <h3 className="text-lg font-bold mb-6 text-terminal-green">Frameworks</h3>
+                  {frameworks.map((skill, index) => (
+                    <SkillBar
+                      key={index}
+                      name={skill.name}
+                      level={skill.level}
+                      color="bg-terminal-green"
+                      index={index}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeInSection>
           </div>
 
-          {/* Technical Expertise */}
-          <div className="animate-fade-in-up animate-delay-200">
-            <div className="bg-card rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center text-purple-600 dark:text-purple-400">
-                <span className="mr-3">🧠</span>
-                Technical Expertise
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skillCategories.technical.map((skill, index) => (
-                  <SkillTag
-                    key={skill}
-                    name={skill}
-                    category="technical"
-                    index={index}
-                  />
-                ))}
+          {/* Technical Areas */} 
+          <div>
+            <FadeInSection delay={200}>
+              <div className="terminal-window h-full">
+                <TerminalHeader path="~/technical-areas" />
+                <div className="terminal-body">
+                  <h3 className="text-lg font-bold mb-6 text-terminal-purple">Technical Areas</h3>
+                  {technicalAreas.map((skill, index) => (
+                    <SkillBar
+                      key={index}
+                      name={skill.name}
+                      level={skill.level}
+                      color="bg-terminal-purple"
+                      index={index}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-
-          {/* Tools & Platforms */}
-          <div className="animate-fade-in-up animate-delay-300">
-            <div className="bg-card rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center text-orange-600 dark:text-orange-400">
-                <span className="mr-3">🛠️</span>
-                Tools & Platforms
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skillCategories.tools.map((skill, index) => (
-                  <SkillTag
-                    key={skill}
-                    name={skill}
-                    category="tool"
-                    index={index}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Areas of Interest */}
-          <div className="animate-fade-in-up animate-delay-300">
-            <div className="bg-card rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <span className="mr-3">🎯</span>
-                Areas of Interest
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {areasOfInterest.map((interest, index) => (
-                  <div
-                    key={interest}
-                    className="p-4 bg-muted rounded-lg border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-md"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <span className="font-medium">{interest}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </FadeInSection>
           </div>
         </div>
+
+        <FadeInSection delay={300}>
+          <div className="mt-16">
+            <h3 className="text-xl font-bold mb-4 text-white">Other Skills & Interests</h3>
+            <div className="terminal-window">
+              <TerminalHeader path="~/others" />
+              <div className="terminal-body">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">
+                    <h4 className="font-bold mb-2 text-terminal-blue">AI Research & Hacking</h4>
+                    <ul className="space-y-1 text-sm">
+                      <li>AI Research</li>
+                      <li>Hacking</li>
+                      <li>Generative AI</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">
+                    <h4 className="font-bold mb-2 text-terminal-green">Deep Learning & Computer Vision</h4>
+                    <ul className="space-y-1 text-sm">
+                      <li>Deep Learning (DL)</li>
+                      <li>Computer Vision (CVIP)</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-terminal-gray bg-opacity-30 rounded-md border border-white/10">
+                    <h4 className="font-bold mb-2 text-terminal-purple">Soft Skills</h4>
+                    <ul className="space-y-1 text-sm">
+                      {softSkills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
       </div>
     </div>
   );
