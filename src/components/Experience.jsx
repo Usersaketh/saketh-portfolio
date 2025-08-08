@@ -1,0 +1,216 @@
+import React from 'react';
+import { Card, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
+import { Briefcase, Award, Trophy } from 'lucide-react';
+
+const Experience = () => {
+  // Experience data directly in component
+  const experienceData = {
+    experience: [
+      {
+        id: 1,
+        position: "Frontend Developer Intern",
+        company: "Coding Rajas Technologies Ltd.",
+        duration: "Jan 2024 - Feb 2024",
+        location: "Online",
+        description: [
+          "Developed a fully functional music player application using front-end technologies (HTML, CSS, Javascript).",
+          "Improved the user interface and user experience by redesigning key elements, enhancing the overall usability of the player."
+        ]
+      }
+    ],
+    certifications: [
+      {
+        name: "Cisco: Python Essentials 1",
+        year: "2023"
+      },
+      {
+        name: "Coursera: Introduction to HTML, CSS, & JavaScript (IBM)",
+        year: "2023"
+      },
+      {
+        name: "Coursera: Python Crash Course (Google)",
+        year: "2023"
+      },
+      {
+        name: "Coursera: Introduction to Generative AI (IBM)",
+        year: "2024"
+      },
+      {
+        name: "Google Cloud: Specialization in Generative AI Learning Path (Intro to Gen AI, LLMs, Responsible AI)",
+        year: "2024"
+      }
+    ],
+    achievements: [
+      {
+        title: "STACKATHON 2025: 1st Prize for Odyssey",
+        year: "2025",
+        description: "Won first prize for developing Odyssey — Full-stack AI-powered journaling app",
+        link: "https://www.linkedin.com/posts/saketh190705_teamwork-aiintech-kitswarangal-activity-7346553387317895169-G43Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmtqKcBZkso6vg7sUJ6u78oY62BTJUR9qs",
+        linkText: "View on LinkedIn"
+      },
+      {
+        title: "Greenthicks Startup Team Member",
+        year: "2025",
+        description: "Team member of an organic farm-to-table startup for online vegetable sales",
+        link: "https://greenthicks.live/",
+        linkText: "Visit Website"
+      },
+      {
+        title: "ThinkHub Educational Platform",
+        year: "2025",
+        description: "Working on developing a digital educational resource platform with tutorials, projects, and paid downloads"
+      }
+    ]
+  };
+
+  const { experience, certifications, achievements } = experienceData;
+
+  return (
+    <section id="experience" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+        <div className="w-full">
+          {/* Section Header */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Experience & <span className="text-blue-500">Achievements</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              My professional journey, certifications, and key achievements in technology and development.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left Column - Experience & Achievements */}
+            <div className="space-y-8">
+              {/* Work Experience */}
+              <Card className="p-6 bg-background border-border/50">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-semibold mb-4 text-blue-500 flex items-center">
+                    <Briefcase className="w-5 h-5 mr-2" />
+                    Work Experience
+                  </h3>
+                  <div className="space-y-4">
+                    {experience.map((exp, index) => (
+                      <div key={exp.id} className={`${index > 0 ? 'border-t border-border/50 pt-4' : ''}`}>
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-lg">{exp.position}</h4>
+                          <p className="text-blue-500 font-medium">{exp.company} | {exp.duration}</p>
+                          <p className="text-muted-foreground text-sm">{exp.location}</p>
+                        </div>
+                        <ul className="space-y-2">
+                          {exp.description.map((desc, i) => (
+                            <li key={i} className="text-muted-foreground text-sm leading-relaxed flex">
+                              <span className="text-blue-500 mr-2">•</span>
+                              {desc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Achievements */}
+              <Card className="p-6 bg-background border-border/50">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-semibold mb-4 text-blue-500 flex items-center">
+                    <Trophy className="w-5 h-5 mr-2" />
+                    Key Achievements
+                  </h3>
+                  <div className="space-y-2">
+                    {achievements.map((achievement, index) => (
+                      <div key={index} className={`${index > 0 ? 'border-t border-border/50 pt-2' : ''}`}>
+                        <div className="flex items-start justify-between mb-2">
+                          <h4 className="font-semibold text-base">{achievement.title}</h4>
+                          <Badge variant="outline" className="text-blue-500 border-blue-500/30">
+                            {achievement.year}
+                          </Badge>
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                          {achievement.description}
+                        </p>
+                        {achievement.link && (
+                          <a 
+                            href={achievement.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-xs text-blue-500 hover:text-blue-400 transition-colors"
+                          >
+                            {achievement.linkText} →
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Right Column - Certifications */}
+            <div className="space-y-8">
+              {/* Certifications */}
+              <Card className="p-6 bg-background border-border/50">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-semibold mb-4 text-blue-500 flex items-center">
+                    <Award className="w-5 h-5 mr-2" />
+                    Certifications
+                  </h3>
+                  <div className="space-y-2">
+                    {certifications.map((cert, index) => (
+                      <div key={index} className={`${index > 0 ? 'border-t border-border/50 ' : ''}`}>
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1 pt-2">
+                            <h4 className="font-semibold text-base">{cert.name+"  "}
+                            <Badge variant="outline" className="text-blue-500 border-blue-500/30">
+                                {cert.year}
+                            </Badge></h4>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Skills Timeline */}
+              <Card className="p-6 bg-background border-border/50">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-semibold mb-6 text-blue-500">
+                    Learning Timeline
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                      <div>
+                        <p className="font-medium">AI/ML Specialization</p>
+                        <p className="text-sm text-muted-foreground">2024 - Present</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-blue-400 rounded-full mr-4"></div>
+                      <div>
+                        <p className="font-medium">Full-Stack Development</p>
+                        <p className="text-sm text-muted-foreground">2023 - 2024</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-blue-300 rounded-full mr-4"></div>
+                      <div>
+                        <p className="font-medium">Programming Fundamentals</p>
+                        <p className="text-sm text-muted-foreground">2022 - 2023</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
