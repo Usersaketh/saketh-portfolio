@@ -33,43 +33,44 @@ const SkillIcon = ({ iconName }) => {
 const Skills = () => {
   // Skills data directly in component
   const skillCategories = {
-    "Programming Languages": {
-      icon: "Code2",
-      skills: ["Java", "Python", "C++", "JavaScript", "TypeScript", "SQL","C"]
-    },
-    "Frontend Development": {
-      icon: "Globe",
-      skills: ["React.js", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "ShadCN UI"]
-    },
-    "Backend & API Development": {
-      icon: "Server",
-      skills: ["Spring Boot", "FastAPI", "Node.js (basic)", "REST APIs", "JWT Auth", "Clerk"]
-    },
-    "AI/ML & NLP": {
-      icon: "Brain",
-      skills: ["TensorFlow", "OpenCV", "Gemini API", "LLaMA3", "CNN's and RNN's", "Agentic AI development", "RAG's"]
-    },
-    "DevOps and Deployment": {
-      icon: "Cloud",
-      skills: ["Git", "GitHub Actions", "Vercel", "Netlify"]
-    },
-    "Databases & Storage": {
-      icon: "Database",
-      skills: ["PostgreSQL", "NeonDB", "MongoDB", "Firebase (basics)", "Redis"]
-    },
-    "Other Tools": {
-      icon: "Zap",
-      skills: ["Git", "Figma", "REST APIs", "SpeechRecognition"]
-    },
-    "Soft Skills": {
-      icon: "Sparkles",
-      skills: ["Fast learner", "Independent executor", "Debugging", "Peer mentorship", "Time management"]
-    },
-    "Areas of Interest": {
-      icon: "Cpu",
-      skills: ["AI Research", "Hacking", "Agentic AI", "Computer Vision"]
-    }
-  };
+  "Programming & Scripting": {
+    icon: "Code2",
+    skills: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "SQL"]
+  },
+  "Frontend Development": {
+    icon: "Globe",
+    skills: ["React.js", "Next.js", "Tailwind CSS", "ShadCN UI", "HTML5", "CSS3", "Streamlit"]
+  },
+  "Backend & APIs": {
+    icon: "Server",
+    skills: ["Spring Boot", "FastAPI", "Node.js", "REST APIs", "JWT Auth", "Clerk"]
+  },
+  "AI/ML & NLP": {
+    icon: "Brain",
+    skills: ["TensorFlow", "OpenCV", "LLM API's", "CNNs & RNNs", "Agentic AI", "NLP pipelines"]
+  },
+  "Data Engineering & Databases": {
+    icon: "Database",
+    skills: ["Supabase PostgreSQL", "MongoDB", "Redis", "ETL pipelines", "Data Visualization"]
+  },
+  "DevOps & Deployment": {
+    icon: "Cloud",
+    skills: ["Git", "GitHub Actions", "Vercel", "Netlify", "Deployment workflows"]
+  },
+  "Other Tools": {
+    icon: "Zap",
+    skills: ["Figma", "SpeechRecognition", "Markdown/MDX", "Notion integrations"]
+  },
+  "Soft Skills": {
+    icon: "Sparkles",
+    skills: ["Fast Learner", "Independent Executor", "Debugging", "Peer Mentorship", "Time Management", "Problem-Solving"]
+  },
+  "Areas of Interest": {
+    icon: "Cpu",
+    skills: ["AI/ML Research", "Full-Stack Dev", "Agentic AI", "Hacking"]
+  }
+};
+
 
   return (
     <section id="skills" className="py-20">

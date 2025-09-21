@@ -42,26 +42,29 @@ const Experience = () => {
       }
     ],
     achievements: [
-      {
-        title: "STACKATHON 2025: 1st Prize for Odyssey",
-        year: "2025",
-        description: "Won first prize for developing Odyssey — Full-stack AI-powered journaling app",
-        link: "https://www.linkedin.com/posts/saketh190705_teamwork-aiintech-kitswarangal-activity-7346553387317895169-G43Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmtqKcBZkso6vg7sUJ6u78oY62BTJUR9qs",
-        linkText: "View on LinkedIn"
-      },
-      {
-        title: "Greenthicks Startup Team Member",
-        year: "2025",
-        description: "Team member of an organic farm-to-table startup for online vegetable sales",
-        link: "https://greenthicks.live/",
-        linkText: "Visit Website"
-      },
-      {
-        title: "ThinkHub Educational Platform",
-        year: "2025",
-        description: "Working on developing a digital educational resource platform with tutorials, projects, and paid downloads"
-      }
-    ]
+  {
+    title: "STACKATHON 2025 – 1st Prize",
+    year: "2025",
+    description: "Won first prize at KITSW’s intra-college hackathon for Odyssey, a full-stack AI-powered journaling app with real-time maps and data integration.",
+    link: "https://lnkd.in/p/g8YmunNA",
+    linkText: "View on LinkedIn"
+  },
+  {
+    title: "Greenthicks – Startup Team Member",
+    year: "2025",
+    description: "Team member in Greenthicks, an organic farm-to-table startup focused on online vegetable sales and sustainable delivery.",
+    link: "https://greenthicks.live/",
+    linkText: "Visit Website"
+  },
+  {
+    title: "Enterprise-Level Projects",
+    year: "2025",
+    description: "Developed multiple enterprise-grade applications including StockPulse (financial data ETL platform) and Worknix (Modern Job Portal), showcasing full-stack development and AI/ML expertise.",
+    link: "https://github.com/usersaketh",
+    linkText: "Check Github"
+  }
+]
+
   };
 
   const { experience, certifications, achievements } = experienceData;

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
-import { Mail, MapPin, Phone, Github, Linkedin, Send, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Phone, Github, Linkedin, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,8 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'validation-error' | 'submit-error' | null
+  const [errorMessage, setErrorMessage] = useState('');
   
   // Portfolio data directly in component
   const portfolioData = {
@@ -28,14 +31,56 @@ const Contact = () => {
     }
   };
 
-  // Mock form submission function
+  // EmailJS configuration
+  const EMAILJS_CONFIG = {
+    serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+    templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID', 
+    publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+  };
+
+  // Real EmailJS submission function with fallback
   const submitContactForm = async (formData) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log('Form submitted:', formData);
-        resolve({ success: true, message: 'Message sent successfully!' });
-      }, 1000);
-    });
+    // Check if EmailJS is properly configured
+    const isEmailJSConfigured = 
+      EMAILJS_CONFIG.serviceId !== 'YOUR_SERVICE_ID' && 
+      EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID' && 
+      EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY';
+
+    if (!isEmailJSConfigured) {
+      // Fallback: Open email client with pre-filled data
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Hi Pranay,\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
+      );
+      const mailtoUrl = `mailto:sakethdussa1234@gmail.com?subject=${subject}&body=${body}`;
+      
+      window.open(mailtoUrl, '_blank');
+      
+      // Return success to show the success message
+      return { success: true, message: 'Email client opened successfully!' };
+    }
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: 'Pranay Saketh', // Your name
+        reply_to: formData.email
+      };
+
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      return { success: true, message: 'Message sent successfully!' };
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      throw new Error('Failed to send message. Please try again.');
+    }
   };
 
   const { personal, social } = portfolioData;
@@ -51,23 +96,53 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("Please fill in all fields.");
+    // Better validation - trim whitespace and check for actual content
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+    
+    if (!name || !email || !message) {
+      setSubmitStatus('validation-error');
+      setErrorMessage('Please fill in all fields before submitting.');
+      setTimeout(() => setSubmitStatus(null), 5000);
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubmitStatus('validation-error');
+      setErrorMessage('Please enter a valid email address.');
+      setTimeout(() => setSubmitStatus(null), 5000);
       return;
     }
 
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
     try {
-      const response = await submitContactForm(formData);
+      const response = await submitContactForm({
+        name: name,
+        email: email,
+        message: message
+      });
       
       if (response.success) {
-        alert("Message sent! Thanks for reaching out. I'll get back to you soon!");
-        
+        setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
+        
+        // Set success message based on the response
+        setErrorMessage(response.message || 'Message sent successfully! I\'ll get back to you soon.');
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
       }
     } catch (error) {
-      alert("Failed to send message. Please try again.");
+      setSubmitStatus('submit-error');
+      setErrorMessage('Failed to send message. Please try again or contact me directly.');
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -234,6 +309,21 @@ const Contact = () => {
                       </>
                     )}
                   </Button>
+
+                  {/* Status Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="flex items-center gap-2 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-green-700 dark:text-green-300">
+                      <CheckCircle className="w-5 h-5" />
+                      <span>{errorMessage || 'Message sent successfully! I\'ll get back to you soon.'}</span>
+                    </div>
+                  )}
+                  
+                  {(submitStatus === 'validation-error' || submitStatus === 'submit-error') && (
+                    <div className="flex items-center gap-2 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300">
+                      <XCircle className="w-5 h-5" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
                 </form>
               </CardContent>
             </Card>
