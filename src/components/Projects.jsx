@@ -179,7 +179,7 @@ const Projects = () => {
     longDescription: "Built with Python, Flask, and OpenWeather API. Provides current temperature, feels like, humidity, wind, pressure, visibility, UV index, and air quality measurements (PM2.5, PM10, CO, NO2, O3). Offers two modes: console CLI and modern responsive web interface with dynamic city selection. Handles network errors, API limits, and invalid locations gracefully.",
     tags: ["Python", "Flask", "OpenWeather API", "Data Visualization", "CLI", "Web Interface", "Error Handling"],
     category: "Full-Stack / AI",
-    image: "/thumbnails/Wheather_app.jpg",
+    image: "/thumbnails/wheather_app.jpg",
     github: "https://github.com/Usersaketh/WEATHER-APP",
     demo: null,
     demoDisabled: true,
