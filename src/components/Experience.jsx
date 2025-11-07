@@ -21,12 +21,16 @@ const Experience = () => {
     ],
     certifications: [
       {
-        name: "Cisco: Python Essentials 1",
-        year: "2023"
+        name: "Oracle Certified Foundations Associate",
+        year: "2025"
       },
       {
-        name: "Coursera: Introduction to HTML, CSS, & JavaScript (IBM)",
-        year: "2023"
+        name: "Google Cloud: Generative AI Learning Path (LLMs, GenAI, Responsible AI)",
+        year: "2024"
+      },
+      {
+        name: "Deeplearning.AI: Building AI Applications with Haystack",
+        year: "2025"
       },
       {
         name: "Coursera: Python Crash Course (Google)",
@@ -35,35 +39,38 @@ const Experience = () => {
       {
         name: "Coursera: Introduction to Generative AI (IBM)",
         year: "2024"
-      },
-      {
-        name: "Google Cloud: Specialization in Generative AI Learning Path (Intro to Gen AI, LLMs, Responsible AI)",
-        year: "2024"
       }
     ],
     achievements: [
-  {
-    title: "STACKATHON 2025 – 1st Prize",
-    year: "2025",
-    description: "Won first prize at KITSW’s intra-college hackathon for Odyssey, a full-stack AI-powered journaling app with real-time maps and data integration.",
-    link: "https://lnkd.in/p/g8YmunNA",
-    linkText: "View on LinkedIn"
-  },
-  {
-    title: "Greenthicks – Startup Team Member",
-    year: "2025",
-    description: "Team member in Greenthicks, an organic farm-to-table startup focused on online vegetable sales and sustainable delivery.",
-    link: "https://greenthicks.live/",
-    linkText: "Visit Website"
-  },
-  {
-    title: "Enterprise-Level Projects",
-    year: "2025",
-    description: "Developed multiple enterprise-grade applications including StockPulse (financial data ETL platform) and Worknix (Modern Job Portal), showcasing full-stack development and AI/ML expertise.",
-    link: "https://github.com/usersaketh",
-    linkText: "Check Github"
-  }
-]
+      {
+        title: "STACKATHON 2025 – 1st Prize",
+        year: "2025",
+        description: "Won first prize for Odyssey, a production-style travel journaling platform handling 2K–5K concurrent users with containerized deployment.",
+        link: "https://lnkd.in/p/g8YmunNA",
+        linkText: "View on LinkedIn"
+      },
+      {
+        title: "OnePlus Bug Bounty – Master-Hand Contributor",
+        year: "2025",
+        description: "Recognized by OnePlus for reporting a validated security issue and rewarded under their bug bounty program.",
+        link: "https://security.oneplus.com/en/charts",
+        linkText: "Check Oneplus Hall of Fame"
+      },
+      {
+        title: "Greenthicks – Full Stack Developer (Tech Collaborator)",
+        year: "2025",
+        description: "Contributed to Greenthicks, an early-stage farm-to-table startup, helping build core website pages and supporting product iterations based on real user feedback.",
+        link: "https://greenthicks.live/",
+        linkText: "Visit Website"
+      },
+      {
+        title: "Enterprise-Level Projects",
+        year: "2025",
+        description: "Built multiple production-style projects including StockPulse (distributed ETL for 65+ companies), Worknix (job portal with thousands of listings), and ResumeGPT (AI-based resume enhancer).",
+        link: "https://github.com/usersaketh",
+        linkText: "Check GitHub"
+      }
+    ]
 
   };
 

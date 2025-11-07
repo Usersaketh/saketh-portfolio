@@ -8,15 +8,20 @@ const About = () => {
   const portfolioData = {
     personal: {
       name: "DUSSA PRANAY SAKETH",
-      whoami: "Hi, I'm Saketh! I'm a full-stack developer with a passion for creating elegant, efficient, and user-friendly web applications. With a background in computer science and a specialization in AI and Machine Learning (AIML), I've spent the last several years honing my skills in modern web technologies and exploring the intersection of web development and intelligent systems.",
-      journey: "My journey into programming started in college, where I dove into web development and began working on full-stack projects using technologies like React, Node.js, and Java. Along the way, I developed a strong interest in AI and machine learning, and I'm now focused on integrating intelligent systems into the applications I build.",
-      philosophy: "I believe in writing clean, maintainable code and continuously improving my craft. I'm particularly interested in how web development and AI can come together to create dynamic, intelligent applications that offer a seamless user experience.",
-      interests_note: "When I'm not coding, I enjoy exploring new tech trends, playing mobile games, and watching movies. I'm also passionate about AI research, and I keep experimenting with new techniques to integrate machine learning models into real-world applications.",
+      whoami: "Hi, I'm Saketh! I'm a full-stack and backend-focused developer who enjoys building reliable, scalable, and user-friendly applications. With a background in Computer Science (AIML), I work on projects that blend strong engineering fundamentals with practical AI integrations.",
+      
+      journey: "I started my programming journey in college, where I got hands-on with full-stack development and backend systems. Over time, I built production-style projects using React, Spring Boot, FastAPI, and modern deployment workflows. Alongside web development, my interest in AI and ML pushed me to build intelligent features into real-world applications.",
+      
+      philosophy: "I believe in building clean, maintainable systems that are easy to understand and scale. My approach is rooted in problem-solving, debugging, and ensuring that products behave reliably under real-world conditions. I love combining solid engineering practices with thoughtful user experience.",
+      
+      interests_note: "Outside of development, I enjoy exploring new tech, gaming, watching anime, and working on side-projects. I’m especially interested in backend engineering, automation, and practical applications of AI.",
+      
       location: "Warangal, Telangana",
+      
       values: [
         "Clean & maintainable code",
         "Continuous learning",
-        "User-centered design",
+        "Ownership & reliability",
         "Collaborative problem solving"
       ]
     },

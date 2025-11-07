@@ -35,39 +35,39 @@ const Skills = () => {
   const skillCategories = {
   "Programming & Scripting": {
     icon: "Code2",
-    skills: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "SQL"]
+    skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL"]
   },
   "Frontend Development": {
     icon: "Globe",
-    skills: ["React.js", "Next.js", "Tailwind CSS", "ShadCN UI", "HTML5", "CSS3", "Streamlit"]
+    skills: ["React.js", "Next.js", "Tailwind CSS", "ShadCN UI", "HTML5", "CSS3"]
   },
   "Backend & APIs": {
     icon: "Server",
-    skills: ["Spring Boot", "FastAPI", "Node.js", "REST APIs", "JWT Auth", "Clerk"]
+    skills: ["Spring Boot", "FastAPI", "Node.js", "REST APIs", "JWT Auth", "Microservices Basics"]
   },
   "AI/ML & NLP": {
     icon: "Brain",
-    skills: ["TensorFlow", "OpenCV", "LLM API's", "CNNs & RNNs", "Agentic AI", "NLP pipelines"]
+    skills: ["LLMs", "Prompt Engineering", "NLP Pipelines", "Agentic AI", "Basic ML Models"]
   },
   "Data Engineering & Databases": {
     icon: "Database",
-    skills: ["Supabase PostgreSQL", "MongoDB", "Redis", "ETL pipelines", "Data Visualization"]
+    skills: ["MySQL", "PostgreSQL", "Supabase", "ETL Pipelines", "Data Visualization"]
   },
   "DevOps & Deployment": {
     icon: "Cloud",
-    skills: ["Git", "GitHub Actions", "Vercel", "Netlify", "Deployment workflows"]
+    skills: ["Git", "GitHub Actions", "Docker", "Vercel", "Netlify", "CI/CD Basics"]
   },
   "Other Tools": {
     icon: "Zap",
-    skills: ["Figma", "SpeechRecognition", "Markdown/MDX", "Notion integrations"]
+    skills: ["VS Code", "Linux/Unix", "Postman", "Swagger/OpenAPI", "Figma"]
   },
   "Soft Skills": {
     icon: "Sparkles",
-    skills: ["Fast Learner", "Independent Executor", "Debugging", "Peer Mentorship", "Time Management", "Problem-Solving"]
+    skills: ["Problem-Solving", "Clear Communication", "Ownership", "Collaboration", "Adaptability"]
   },
   "Areas of Interest": {
     icon: "Cpu",
-    skills: ["AI/ML Research", "Full-Stack Dev", "Agentic AI", "Hacking"]
+    skills: ["Backend Engineering", "Full-Stack Development", "AI/ML Systems", "Automation", "Security"]
   }
 };
 
